@@ -10,7 +10,7 @@
 
     <node name="$(arg device_user_id)" pkg="pylon_camera" type="pylon_camera_node" output="screen"
           respawn="$(arg respawn)">
-        <param name="camera_frame" value="$(arg node_name)" />
+        <param name="camera_frame" value="$(arg device_user_id)" />
         <param name="device_user_id" value="$(arg device_user_id)" />
         <param name="image_encoding" value="$(arg image_encoding)" />
         <param name="brightness_continuous" value="$(arg brightness_continuous)" />
