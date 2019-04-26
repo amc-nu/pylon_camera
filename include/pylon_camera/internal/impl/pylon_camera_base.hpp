@@ -66,7 +66,7 @@ bool PylonCameraImpl<CameraTraitT>::registerCameraConfiguration()
 {
     try
     {
-        cam_->RegisterConfiguration(new Pylon::CSoftwareTriggerConfiguration,
+        cam_->RegisterConfiguration(new Pylon::CAcquireContinuousConfiguration,
                                         Pylon::RegistrationMode_ReplaceAll,
                                         Pylon::Cleanup_Delete);
         return true;

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="respawn" default="false" />
+    <arg name="device_user_id" default="cam_id"/>
+    <arg name="image_encoding" default="bayer_rggb8"/>
+    <arg name="brightness_continuous" default="true"/>
+    <arg name="gain_auto" default="true"/>
+    <arg name="frame_rate" default="10"/>
+    <arg name="camera_info_url" default=""/>
+
+    <node name="$(arg device_user_id)" pkg="pylon_camera" type="pylon_camera_node" output="screen"
+          respawn="$(arg respawn)">
+        <param name="camera_frame" value="$(arg node_name)" />
+        <param name="device_user_id" value="$(arg device_user_id)" />
+        <param name="image_encoding" value="$(arg image_encoding)" />
+        <param name="brightness_continuous" value="$(arg brightness_continuous)" />
+        <param name="gain_auto" value="$(arg gain_auto)" />
+        <param name="frame_rate" value="$(arg frame_rate)" />
+    </node>
+</launch>
